@@ -17,13 +17,21 @@
             scroll-behavior: smooth;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+
         body {
             font-family: 'Playfair-Display', serif;
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            line-height: 1.5;
             color: #333;
-            min-height: 3800px;
         }
 
         .navbar-logo span {
@@ -35,16 +43,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: #fff;
+            background-color: #ffffff77;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
-            /* pastikan bukan fixed/sticky */
+            top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
-            z-index: 10000;
+            z-index: 999999;
+            height: 56px;
+
         }
 
         .navbar-logo {
-            font-size: 19.5px;
+            font-size: 26px;
             font-family: 'Poppins', sans-serif;
             font-weight: bold;
             text-decoration: none;
@@ -56,8 +68,9 @@
             list-style: none;
             display: flex;
             gap: 18px;
-            margin: 0;
-            padding: 0;
+            font-size: 20px;
+            margin-top: 10px;
+
         }
 
         .navbar-menu li a {
@@ -91,6 +104,10 @@
         .navbar-extra {
             color: #333;
             margin: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 9px;
         }
 
         .navbar-extra a {
@@ -106,9 +123,9 @@
         /* HERO */
         .header {
             background-color: #f5f5f5;
-            padding: 100px 20px;
+            padding: 120px 20px;
             background: url("img/download.jpeg") no-repeat center center/cover;
-            height: 59vh;
+            height: 100vh;
             display: flex;
             position: relative;
         }
@@ -138,7 +155,7 @@
 
         .header-content h1 {
             font-size: 48px;
-            margin-bottom: 20px;
+            margin-top: -94px;
             font-family: 'Momo Trust Display', cursive;
         }
 
@@ -178,7 +195,7 @@
         /* MENU SECTION */
         .menu2 {
             padding: 100px 100px;
-            padding-bottom: 120px;
+            padding-bottom: 10px;
             text-align: center;
             min-height: 20vh;
         }
@@ -186,6 +203,7 @@
         .menu2 h2 {
             font-family: 'Momo Trust Display', cursive;
             font-size: 36px;
+            margin-top: 300px;
         }
 
         .menu2 h2 span {
@@ -265,18 +283,21 @@
         /* DRINKS MENU SECTION */
         .drinks-menu {
             padding: 100px 100px;
-            padding-bottom: 120px;
+            padding-top: -100px;
             text-align: center;
-            
-            min-height: 20vh;
+            margin-top: -150px;
+            min-height: 10vh;
         }
+
         .jir {
-            margin-bottom: -200px;
+            margin-top: -100px;
         }
+
         .drinks-menu h2 {
             font-family: 'Momo Trust Display', cursive;
             font-size: 36px;
         }
+
         .drinks-menu h2 span {
             color: #3ce236;
         }
@@ -494,6 +515,10 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
+        .image-about-mobile {
+            display: none;
+        }
+
         .badge {
             position: absolute;
             bottom: 20px;
@@ -579,137 +604,605 @@
         }
 
         /* FOOTER */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+
+
+        /* MODAL STYLE */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
-        footer .medsos a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 20px;
-            transition: color 0.3s ease;
+        .modal.active {
+            display: flex;
         }
 
-        footer .medsos a:hover {
+        .modal-box {
+            background: #fff;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            overflow: hidden;
+            animation: zoomIn 0.3s ease;
+            position: relative;
+            padding-bottom: -80px;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .modal-content {
+            padding: 20px;
+            position: relative;
+        }
+
+        .modal-content h3 {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-content p {
+            margin: 10px 0;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .close-btn {
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
             color: #99d60a;
         }
-        /* MODAL STYLE */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        }
-    .modal.active {
-        display: flex;
-        }
-    .modal-box {
-        background: #fff;
-        border-radius: 15px;
-        width: 90%;
-        max-width: 500px;
-        overflow: hidden;
-        animation: zoomIn 0.3s ease;
-        position: relative;
-        padding-bottom: -80px;
-        }
-    @keyframes zoomIn {
-        from {
-            transform: scale(0.8);
-            opacity: 0;
-        }
-        to {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-    .modal-box img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        }
-    .modal-content {
-        padding: 20px;
-        position: relative;
-        }
-    .modal-content h3 {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        }
-    .modal-content p {
-        margin: 10px 0;
-        color: #555;
-        font-family: 'Poppins', sans-serif;
-        }
-    .close-btn {
-        top: 10px;
-        right: 15px;
-        font-size: 24px;
-        color: #333;
-        cursor: pointer;
-        background: none;
-        border: none;
-        }
-    .close-btn:hover {
-        color: #99d60a;
-        }
-    .modal-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 20px;
-        background: #f5f5f5;
-        }
-    .buy-btn {
-        padding: 10px 20px;
-        background: #99d60a;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        }
-    .buy-btn:hover {
-        background: #7ac108;
-        }
-        
-    .qty {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 15px;
-        font-family: 'Poppins', sans-serif;
-        }
-    .qty button {
-        padding: 5px 10px;
-        background: #99d60a;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        }
-    .qty button:hover {
-        background: #7ac108;
-        }
-    .topping {
-        margin-top: 15px;
-        font-family: 'Poppins', sans-serif;
-        text-align: left;
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f5f5f5;
         }
 
+        .buy-btn {
+            padding: 10px 20px;
+            background: #99d60a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
+        .buy-btn:hover {
+            background: #7ac108;
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .qty button {
+            padding: 5px 10px;
+            background: #99d60a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .qty button:hover {
+            background: #7ac108;
+        }
+
+        .topping {
+            margin-top: 15px;
+            font-family: 'Poppins', sans-serif;
+            text-align: left;
+        }
+
+        /* Media query untuk layar mobile kecil (max-width: 480px) - Optimized for Vivo V9 (360px width, 18:9 aspect ratio) */
+        @media (max-width: 480px) {
+            body {
+                min-height: 100vh;
+            }
+
+            .header-navbar {
+                padding: 10px 15px;
+
+            }
+
+            .navbar-logo {
+                font-size: 12px;
+            }
+
+            .navbar-menu {
+                gap: 10px;
+            }
+
+            .navbar-extra {
+                margin-top: 5px;
+            }
+
+            .header {
+                padding: 60px 0px;
+                height: 70vh;
+                /* Increased to fill more screen on tall devices */
+            }
+
+            .header-content h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .header-content p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .getstart {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .menu2 {
+                padding: 20px 15px;
+                /* Reduced padding for better space utilization */
+                min-height: 30vh;
+                /* Adjusted for balance */
+            }
+
+            .drinks-menu {
+                padding: 20px 15px;
+                /* Reduced padding for better space utilization */
+                min-height: 30vh;
+                /* Adjusted for balance */
+            }
+
+            .menu-card {
+                min-width: 160px;
+                /* Slightly smaller for better fit */
+                padding: 10px;
+            }
+
+            .menu-card h5 {
+                font-size: 16px;
+                margin: 8px 0 3px;
+            }
+
+            .menu-card span {
+                font-size: 14px;
+            }
+
+            .blog {
+                padding: 20px 15px;
+                /* Reduced padding */
+            }
+
+            .blog-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .blog-card {
+                padding: 20px;
+            }
+
+            .blog-post-title {
+                font-size: 20px;
+            }
+
+            .blog-content p {
+                font-size: 15px;
+            }
+
+            .about-restaurant {
+                padding: 20px 15px;
+                /* Reduced padding */
+                grid-template-columns: 1fr;
+                gap: 20px;
+                /* Tighter gap for balance */
+            }
+
+            .about-text h1 {
+                font-size: 32px;
+            }
+
+            .about-text h2 {
+                font-size: 24px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .about-highlights {
+                flex-direction: column;
+                gap: 10px;
+                /* Tighter gap */
+            }
+
+            .highlight {
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+
+            .about-image img {
+                height: 200px;
+                /* Reduced height for balance */
+                margin-top: 20px;
+                /* Reduced margin */
+            }
+
+            .contact {
+                padding: 20px 15px;
+                /* Reduced padding */
+            }
+
+            .contact h2 {
+                font-size: 28px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 1.5rem;
+                /* Tighter gap */
+            }
+
+            .maps {
+                width: 100%;
+                height: 200px;
+                /* Reduced height for balance */
+            }
+
+            form {
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .modal-box {
+                width: 95%;
+                max-width: 350px;
+                /* Optimized for 360px viewport */
+            }
+
+            .modal-content {
+                padding: 15px;
+            }
+
+            .modal-footer {
+                padding: 10px 15px;
+            }
+        }
+
+        /* Media query untuk tablet kecil (max-width: 600px) */
+        @media (max-width: 600px) {
+            .header-navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar-logo {
+                font-size: 18px;
+            }
+
+            .header {
+                padding: 100px 20px;
+                height: 55vh;
+            }
+
+            .header-content h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .header-content p {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .getstart {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+
+            .menu2 {
+                padding: 50px 20px;
+            }
+
+            .drinks-menu {
+                padding: 50px 20px;
+            }
+
+            .menu-card {
+                min-width: 200px;
+                padding: 12px;
+            }
+
+            .menu-card h5 {
+                font-size: 18px;
+                margin: 10px 0 5px;
+            }
+
+            .menu-card span {
+                font-size: 15px;
+            }
+
+            .blog {
+                padding: 50px 20px;
+            }
+
+            .blog-title {
+                font-size: 32px;
+                margin-bottom: 25px;
+            }
+
+            .blog-card {
+                padding: 25px;
+            }
+
+            .blog-post-title {
+                font-size: 24px;
+            }
+
+            .blog-content p {
+                font-size: 16px;
+            }
+
+            .about-restaurant {
+                padding: 50px 20px;
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-text h1 {
+                font-size: 36px;
+            }
+
+            .about-text h2 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+            }
+
+            .about-highlights {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .highlight {
+                padding: 15px 12px;
+                font-size: 14px;
+            }
+
+            .about-image img {
+                height: 300px;
+                margin-top: 50px;
+            }
+
+            .contact {
+                padding: 50px 20px;
+            }
+
+            .contact h2 {
+                font-size: 32px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+
+            .maps {
+                width: 100%;
+                height: 300px;
+            }
+
+            form {
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .modal-box {
+                width: 90%;
+                max-width: 450px;
+            }
+
+            .modal-content {
+                padding: 18px;
+            }
+
+            .modal-footer {
+                padding: 12px 18px;
+            }
+        }
+
+        /* Media query untuk tablet besar (max-width: 900px) */
+        @media (max-width: 900px) {
+            .header-navbar {
+                padding: 15px 25px;
+            }
+
+            .navbar-logo {
+                font-size: 20px;
+            }
+
+            .header {
+                padding: 120px 25px;
+                height: 60vh;
+            }
+
+            .header-content h1 {
+                font-size: 40px;
+                margin-bottom: 25px;
+            }
+
+            .header-content p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .getstart {
+                padding: 14px 30px;
+                font-size: 18px;
+            }
+
+            .menu2 {
+                padding: 60px 25px;
+            }
+
+            .drinks-menu {
+                padding: 60px 25px;
+            }
+
+            .menu-card {
+                min-width: 220px;
+                padding: 15px;
+            }
+
+            .menu-card h5 {
+                font-size: 20px;
+                margin: 10px 0 5px;
+            }
+
+            .menu-card span {
+                font-size: 16px;
+            }
+
+            .blog {
+                padding: 60px 25px;
+                margin-top: 200px;
+            }
+
+            .blog-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+
+            .blog-card {
+                padding: 30px;
+            }
+
+            .blog-post-title {
+                font-size: 26px;
+            }
+
+            .blog-content p {
+                font-size: 17px;
+            }
+
+            .about-restaurant {
+                padding: 60px 25px;
+                grid-template-columns: 1fr 0.8fr;
+                gap: 50px;
+            }
+
+            .about-text h1 {
+                font-size: 38px;
+            }
+
+            .about-text h2 {
+                font-size: 30px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+            }
+
+            .about-highlights {
+                flex-direction: row;
+                gap: 18px;
+            }
+
+            .highlight {
+                padding: 16px 14px;
+                font-size: 15px;
+            }
+
+            .about-image img {
+                height: 350px;
+                margin-top: 60px;
+            }
+
+            .contact {
+                padding: 60px 25px;
+            }
+
+            .contact h2 {
+                font-size: 36px;
+            }
+
+            .row {
+                flex-direction: row;
+                gap: 3rem;
+            }
+
+            .maps {
+                width: 100%;
+                max-width: 450px;
+                height: 320px;
+            }
+
+            form {
+                max-width: 450px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .modal-box {
+                width: 85%;
+                max-width: 480px;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-footer {
+                padding: 15px 20px;
+            }
+        }
     </style>
 </head>
 
@@ -728,109 +1221,209 @@
             </ul>
         </div>
         <div class="navbar-extra">
-            <a href="#"><i data-feather="search"></i></a>
+            <a href="#-" id="searchIcon"><i data-feather="search"></i></a>
             <a href="#" id="menu-icon"><i data-feather="menu"></i></a>
-            <a href="#" id="account"><i data-feather="user"></i></a>
+            <a href="login.html" id="account"><i data-feather="user"></i></a>
         </div>
     </nav>
 
-        <!-- STYLE ICON NAVBAR -->
-         <style>
-    /* =========================
+    <div class="search-box" id="search-box">
+        <input type="text" placeholder="Cari sesuatu...">
+    </div>
+
+    <script>
+        const searchIcon = document.querySelector('#searchIcon');
+        const searchBox = document.querySelector('#search-box');
+        searchIcon.addEventListener('click', () => {
+            searchBox.classList.toggle('active');
+        });
+    </script>
+
+    <style>
+        .search-box {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(2, 2, 2, 0.774);
+            display: none;
+            z-index: 1001;
+        }
+
+        .search-box.active {
+            display: block;
+        }
+
+        .search-box input {
+            width: 500px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #99d60a9d;
+        }
+    </style>
+
+    <!-- STYLE ICON NAVBAR -->
+    <style>
+        /* =========================
    DEFAULT (DESKTOP)
 ========================= */
-#menu-icon {
-  display: none;
-}
+        #menu-icon {
+            display: none;
+        }
 
-.header-navbar {
-  position: relative;
-}
+        .header-navbar {
+            padding: 20px 40px;
+        }
 
-.navbar-nav {
-  display: flex;
-}
+        .navbar-nav {
+            display: flex;
+        }
 
-.navbar-menu {
-  display: flex;
-  gap: 1.5rem;
-}
+        .navbar-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-/* =========================
+        /* =========================
    LAPTOP
 ========================= */
-@media (max-width: 1024px) {
-  html {
-    font-size: 17px;
-  }
-}
+        @media (max-width: 1024px) {
+            html {
+                font-size: 17px;
+            }
+        }
 
-/* =========================
+        /* =========================
    TABLET & MOBILE
 ========================= */
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
 
-  /* tampilkan icon menu */
-  #menu-icon {
-    display: block;
-    cursor: pointer;
-  }
+            /* tampilkan icon menu */
+            #menu-icon {
+                display: block;
+                cursor: pointer;
+            }
 
-  /* sembunyikan menu normal */
-  .navbar-menu {
-    flex-direction: column;
-  }
+            .navbar-logo {
+                font-size: 21px;
+                left: -50px;
+            }
 
-  /* popup menu */
-  .header-navbar .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: -90%;
-    width: 50%;
-    height: 100vh;
-    padding-top: 80px;
+            /* sembunyikan menu normal */
+            .navbar-menu {
+                flex-direction: column;
+                gap: 5px;
+            }
 
-    background-color: #fff;
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease;
+            .navbar-extra {
+                padding: 0;
+                width: 89px;
+            }
 
-    display: flex;
-    flex-direction: column;
-    z-index: 999;
-  }
+            .search-box input {
+                width: 220px;
+            }
 
-  .header-navbar .navbar-nav.active {
-    right: 0;
-  }
+            /* popup menu */
+            .header-navbar .navbar-nav {
+                position: fixed;
+                top: 0;
+                right: -90%;
+                width: 50%;
+                height: 100vh;
+                padding-top: 80px;
 
-  /* link menu */
-  .navbar-menu a {
-    color: #333;
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    display: block;
-  }
+                background-color: #fff;
+                box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+                transition: right 0.3s ease;
 
-  .navbar-menu a:hover {
-    background-color: #f5f5f5;
-  }
-}
-         </style>
+                display: flex;
+                flex-direction: column;
+                z-index: 999;
+            }
 
-        <!-- SCRIPT ICON NAVBAR  -->
-        <script src="https://unpkg.com/feather-icons"></script>
+            .header-navbar .navbar-nav.active {
+                right: 0;
+            }
+
+            .header {
+                padding: 120px 2px;
+
+            }
+
+            /* link menu */
+            .navbar-menu a {
+                color: #333;
+                font-size: 1.2rem;
+                padding: 0.5rem 2rem;
+                display: block;
+            }
+
+            .navbar-menu a:hover {
+                background-color: #f5f5f5;
+            }
+
+            /* about mobile layout */
+            .about-restaurant {
+                grid-template-columns: 1.3fr 0.7fr;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .about-image img {
+                width: 100%;
+                height: 140px;
+                object-fit: cover;
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-image,
+            .image-about-mobile {
+                position: relative;
+            }
+
+            .main-image {
+                margin-top: 20px;
+            }
+
+            .image-about-mobile {
+                display: block;
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                border-radius: 16px;
+                margin-bottom: 30px;
+                margin-top: -20px;
+            }
+
+            .badge {
+                bottom: 8px;
+                right: 8px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+
+    <!-- SCRIPT ICON NAVBAR  -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <script>
         feather.replace();
-    const menuIcon = document.querySelector("#menu-icon");
-    const navMenu = document.querySelector("#navbar-menu");
+        const menuIcon = document.querySelector("#menu-icon");
+        const navMenu = document.querySelector("#navbar-menu");
 
-    menuIcon.addEventListener("click", () => navMenu.classList.toggle("active"));
-    document.addEventListener("click", (e) => {
-      if (!menuIcon.contains(e.target) && !navMenu.contains(e.target)) navMenu.classList.remove("active");
-    });
+        menuIcon.addEventListener("click", () => navMenu.classList.toggle("active"));
+        document.addEventListener("click", (e) => {
+            if (!menuIcon.contains(e.target) && !navMenu.contains(e.target)) navMenu.classList.remove("active");
+        });
     </script>
 
     <!-- HERO -->
@@ -849,65 +1442,65 @@
     <!-- MENU SECTION -->
     <section class="menu2" id="menu2">
         <div class="jir">
-        <h2>Food <span>Menu</span></h2>
+            <h2>Food <span>Menu</span></h2>
 
-        <div class="div-menu">
-            <button class="arrow" id="leftBtn">◀</button>
+            <div class="div-menu">
+                <button class="arrow" id="leftBtn">◀</button>
 
-            <div class="menu-scroll">
-                <div class="menu" id="menu">
-                    <div class="menu-card" onclick="openModal('Ruisleipa', 'img/ruisleipa.jpeg')">
-                        <img src="img/ruisleipa.jpeg" />
-                        <h5>Ruisleipa</h5>
-                        <span>$12</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
-                    </div>
+                <div class="menu-scroll">
+                    <div class="menu" id="menu">
+                        <div class="menu-card" onclick="openModal('Ruisleipa', 'img/ruisleipa.jpeg')">
+                            <img src="img/ruisleipa.jpeg" />
+                            <h5>Ruisleipa</h5>
+                            <span>$12</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
 
-                    <div class="menu-card" onclick="openModal('Karjalanpirakka', 'img/karjalanpirakka.jpeg')">
-                        <img src="img/karjalanpirakka.jpeg" />
-                        <h5>Karjalanpirakka</h5>
-                        <span>$14</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
-                    </div>
+                        <div class="menu-card" onclick="openModal('Karjalanpirakka', 'img/karjalanpirakka.jpeg')">
+                            <img src="img/karjalanpirakka.jpeg" />
+                            <h5>Karjalanpirakka</h5>
+                            <span>$14</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
 
-                    <div class="menu-card" onclick="openModal('Karjalanpirakka', 'img/karjalanpirakka.jpeg')">
-                        <img src="img/karjalanpirakka.jpeg" />
-                        <h5>Karjalanpirakka</h5>
-                        <span>$14</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
-                    </div>
+                        <div class="menu-card" onclick="openModal('Karjalanpirakka', 'img/karjalanpirakka.jpeg')">
+                            <img src="img/karjalanpirakka.jpeg" />
+                            <h5>Karjalanpirakka</h5>
+                            <span>$14</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
 
-                    <div class="menu-card" onclick="openModal('Lohikeitto', 'img/lohikeitto.jpeg')">
-                        <img src="img/lohikeitto.jpeg" />
-                        <h5>Lohikeitto</h5>
-                        <span>$18</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
-                    </div>
+                        <div class="menu-card" onclick="openModal('Lohikeitto', 'img/lohikeitto.jpeg')">
+                            <img src="img/lohikeitto.jpeg" />
+                            <h5>Lohikeitto</h5>
+                            <span>$18</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
 
-                    <div class="menu-card" onclick="openModal('Kalakukko', 'img/kalakukko.jpeg')">
-                        <img src="img/kalakukko.jpeg" />
-                        <h5>Kalakukko</h5>
-                        <span>$15</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
-                    </div>
+                        <div class="menu-card" onclick="openModal('Kalakukko', 'img/kalakukko.jpeg')">
+                            <img src="img/kalakukko.jpeg" />
+                            <h5>Kalakukko</h5>
+                            <span>$15</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
 
                         <div class="menu-card" onclick="openModal('Harnokeitto', 'img/harnokeitto.jpeg')">
                             <img src="img/harnokeitto.jpeg" />
-                        <h3>Harnokeitto</h3>
-                        <span>$16</span>
-                        <a href="#" class="info-icon" data-feather="info"></a>
+                            <h3>Harnokeitto</h3>
+                            <span>$16</span>
+                            <a href="#" class="info-icon" data-feather="info"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <button class="arrow" id="rightBtn">▶</button>
-        </div>
+                <button class="arrow" id="rightBtn">▶</button>
+            </div>
         </div>
     </section>
 
     <!-- menu drinks section -->
-        <section class="drinks-menu">
-        <h2>Drinks <span>Menu</span></h2>
+    <section class="drinks-menu">
+        <h2><span></span></h2>
         <div class="div-menu">
             <button class="arrow" id="drinks-leftBtn">◀</button>
 
@@ -940,19 +1533,19 @@
                         <span>$4</span>
                         <a href="#" class="info-icon" data-feather="info"></a>
                     </div>
-                     <div class="menu-card" onclick="openModal ('Taro Latte', 'img/taro latte.jpeg')">
-                        <img src="img/taro latte.jpeg"/>
+                    <div class="menu-card" onclick="openModal ('Taro Latte', 'img/taro latte.jpeg')">
+                        <img src="img/taro latte.jpeg" />
                         <h5>Taro Latte</h5>
                         <span>$5</span>
                         <a href="#" class="info-icon" data-feather="info"></a>
                     </div>
-                     <div class="menu-card" onclick="openModal ('Matcha Caramel', 'img/matcha caramel.jpeg')">
-                        <img src="img/matcha caramel.jpeg"/>
+                    <div class="menu-card" onclick="openModal ('Matcha Caramel', 'img/matcha caramel.jpeg')">
+                        <img src="img/matcha caramel.jpeg" />
                         <h5>Matcha Caramel</h5>
                         <span>$3</span>
                         <a href="#" class="info-icon" data-feather="info"></a>
                     </div>
-                     <div class="menu-card" onclick="openModal('Chocolatte', 'img/chocolatte.jpeg')">
+                    <div class="menu-card" onclick="openModal('Chocolatte', 'img/chocolatte.jpeg')">
                         <img src="img/chocolatte.jpeg" />
                         <h5>Chocolatte</h5>
                         <span>$3</span>
@@ -962,10 +1555,10 @@
             </div>
 
             <button class="arrow" id="drinks-rightBtn">▶</button>
-     </section>
+    </section>
 
-     <!-- MODAL SECTION -->
-      <div class="modal" id="modal">
+    <!-- MODAL SECTION -->
+    <div class="modal" id="modal">
         <div class="modal-box">
             <img id="modalImg">
             <div class="modal-content">
@@ -987,7 +1580,7 @@
                 <span class="price" id="totalPrice"></span>
                 <button class="buy-btn">Pesan</button>
             </div>
-      </div>
+        </div>
     </div>
 
     <script>
@@ -1165,7 +1758,7 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('modal').addEventListener('click', function(event) {
+        document.getElementById('modal').addEventListener('click', function (event) {
             if (event.target.id === 'modal') {
                 closeModal();
             }
@@ -1173,7 +1766,7 @@
     </script>
     <!-- END MODAL SECTION -->
 
-    
+
 
     <!-- Popup -->
     <div id="popup" class="popup">
@@ -1286,21 +1879,71 @@
 
         </div>
         <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Restaurant Interior">
-            <div class="badge">Since 2018</div>
+            <div class="main-image">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Restaurant Interior">
+                <div class="badge">Since 2025</div>
+            </div>
+            <div class="image-about-mobile">
+                <img src="img/luxury.jpeg" alt="Restaurant Servant">
+                <div class="badge">Since 2026</div>
+            </div>
         </div>
+
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="admin medsos">
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="facebook"></i></a>
-            <a href="#"><i data-feather="youtube"></i></a>
+        <div class="admin-medsos">
+            <div class="medsos-icons">
+                <a href="#"><i data-feather="instagram"></i></a>
+                <a href="#"><i data-feather="facebook"></i></a>
+                <a href="#"><i data-feather="youtube"></i></a>
+            </div>
             <p>© 2025 Rimang Resto. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- FEATHER ICON -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+
+    <style>
+        footer {
+            background: #2e2e2e;
+            /* ijo gelap RimangResto */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer .admin-medsos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        footer .medsos-icons a {
+            color: #ffffff;
+            margin: 0 10px;
+            margin-top: 10x;
+            font-size: 22px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        footer .medsos-icons a:hover {
+            color: #1fa45b;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+    </style>
     <!-- SCRIPT -->
     <script>
         const menu = document.getElementById("menu");
@@ -1401,7 +2044,5 @@
             }
         });
     </script>
-
 </body>
-
 </html>

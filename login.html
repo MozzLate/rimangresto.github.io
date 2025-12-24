@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>RimangResto — Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #1fa45b;
+  --green-soft: #e9f7ef;
+  --dark: #0f2d1e;
+  --border: rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a1f599, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+}
+
+/* CARD */
+.wrapper {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  animation: fadeUp 0.7s ease;
+}
+
+/* BRAND */
+.brand {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand span {
+  color: #3ce236;
+}
+
+/* INPUT */
+.field {
+  margin-bottom: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f9f9f9;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: var(--green);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(31,164,91,0.15);
+}
+
+input::placeholder {
+  color: #999;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(45deg,  #99d60a9d, var(--green));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(31,164,91,0.35);
+}
+
+#logoutButton {
+  margin-top: 12px;
+  background: white;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+/* ROLE */
+.role-box {
+  display: none;
+  margin-top: 22px;
+}
+
+.role-card {
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--green-soft);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.role-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(31,164,91,0.25);
+}
+
+.role-card a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.role-card span {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="brand">
+    <h1>Rimang<span>Resto</span></h1>
+  </div>
+
+  <div id="loginForm">
+    <div class="field">
+      <input id="usernameInput" placeholder="Username">
+    </div>
+    <div class="field">
+      <input id="passwordInput" type="password" placeholder="Password">
+    </div>
+    <button onclick="onLogin()">Masuk</button>
+  </div>
+
+  <button id="logoutButton" onclick="onLogout()">Logout</button>
+
+  <!-- ROLE -->
+  <div class="role-box" id="admin">
+    <div class="role-card">
+      <a href="index.html">Masuk sebagai <span>Admin</span></a>
+    </div>
+  </div>
+
+  <div class="role-box" id="peler">
+    <div class="role-card">
+      <a href="index.html">Masuk sebagai <span>Kasir</span></a>
+    </div>
+  </div>
+
+  <div class="role-box" id="basic">
+    <div class="role-card">
+      <a href="index.html">Masuk sebagai <span>Member</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+const usernameInput = document.getElementById("usernameInput");
+const passwordInput = document.getElementById("passwordInput");
+const logoutButton = document.getElementById("logoutButton");
+const loginForm = document.getElementById("loginForm");
+
+const admin = document.getElementById("admin");
+const peler = document.getElementById("peler");
+const basic = document.getElementById("basic");
+
+logoutButton.style.display = "none";
+
+function onLogin() {
+  const u = usernameInput.value.trim();
+  const p = passwordInput.value.trim();
+
+  localStorage.setItem("username", u);
+
+  if (u === "admin" && p === "admin123") {
+    localStorage.setItem("role", "admin");
+    showRole("admin");
+  } else if (u === "kasir" && p === "kasir123") {
+    localStorage.setItem("role", "peler");
+    showRole("peler");
+  } else {
+    localStorage.setItem("role", "basic");
+    showRole("basic");
+  }
+}
+
+function showRole(role) {
+  loginForm.style.display = "none";
+  logoutButton.style.display = "block";
+
+  admin.style.display = role === "admin" ? "block" : "none";
+  peler.style.display = role === "peler" ? "block" : "none";
+  basic.style.display = role === "basic" ? "block" : "none";
+}
+
+function onLogout() {
+  localStorage.clear();
+  location.reload();
+}
+
+if (localStorage.getItem("username")) {
+  showRole(localStorage.getItem("role"));
+}
+</script>
+
+</body>
+</html>
