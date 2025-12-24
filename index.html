@@ -29,7 +29,7 @@
             font-family: 'Playfair-Display', serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f9fafb;
             line-height: 1.5;
             color: #333;
         }
@@ -200,6 +200,12 @@
             min-height: 20vh;
         }
 
+        .menu2 p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #6b7280;
+        }
+
         .menu2 h2 {
             font-family: 'Momo Trust Display', cursive;
             font-size: 36px;
@@ -368,77 +374,7 @@
             color: #99d60a;
         }
 
-        /* BLOG SECTION */
-        .blog {
-            padding: 60px 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .blog-title span {
-            color: #3ce236;
-        }
-
-        .blog-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-            font-family: 'Momo Trust Display', cursive;
-        }
-
-        .blog-card {
-            background: #99d60a9d;
-            border-radius: 12px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.788);
-            padding: 25px;
-            margin-bottom: 50px;
-        }
-
-        .blog-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .blog-profile {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .blog-author {
-            margin: 0;
-            font-size: 18px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .blog-date {
-            margin: 0;
-            font-size: 14px;
-            color: #777;
-        }
-
-        .blog-thumbnail {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 15px 0;
-        }
-
-        .blog-post-title {
-            margin-top: 10px;
-            font-size: 26px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .blog-content p {
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 17px;
-        }
+        
 
 
         /* ABOUT SECTION */
@@ -552,6 +488,12 @@
         .contact h2 {
             font-family: 'Momo Trust Display', cursive;
             font-size: 36px;
+        }
+
+        .contact p {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 10px;
         }
 
         .contact h2 span {
@@ -1441,10 +1383,13 @@
         </div>
     </section>
 
+
     <!-- MENU SECTION -->
+     <div class="menu-menu">
     <section class="menu2" id="menu2">
         <div class="jir">
             <h2>Food <span>Menu</span></h2>
+            <p>Kami menampilkan menu-menu terbaik berikut.</p>
 
             <div class="div-menu">
                 <button class="arrow" id="leftBtn">◀</button>
@@ -1558,6 +1503,13 @@
 
             <button class="arrow" id="drinks-rightBtn">▶</button>
     </section>
+    </div>
+    <style>
+        .menu-menu {
+            margin-bottom: -100px;
+            margin-top: 10px;
+        }
+    </style>
 
     <!-- MODAL SECTION -->
     <div class="modal" id="modal">
@@ -1778,76 +1730,183 @@
             <p>lorem ipsum dolor sit amet</p>
         </div>
     </div>
+<style>
+   /* BLOG SECTION - MODERN */
+.blog {
+  padding: 4rem 6%;
+  background: #f9fafb;
+}
 
-    <!-- -- BLOG REVIEW -->
-    <section class="blog" id="blog">
-        <h2 class="blog-title">Blog <span>Review</span></h2>
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-        <div class="blog-card">
-            <div class="blog-header">
-                <img src="img/fin.jpeg" alt="Profile" class="blog-profile">
-                <div>
-                    <h4 class="blog-author">Adit The Frozen Traveler</h4>
-                    <p class="blog-date">Diposting pada 21 November 2024</p>
-                </div>
-            </div>
+.blog-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
 
-            <img src="img/traveler.jpg" class="blog-thumbnail" alt="Finland Trip">
+.blog-header h2 span {
+  color: #3ce236;
+}
 
-            <div class="blog-content">
-                <h3 class="blog-post-title">✈ Blog Trip Finlandia: “Mampir ke Gagak Rimang Resto, Tempat yang Bikin
-                    Lidah Auto Ngibrit Seneng”</h3>
+.blog-header p {
+  color: #6b7280;
+  font-size: 15px;
+  margin-top: 0.75rem;
+}
 
-                <p>Jadi bro, ceritanya gue lagi jalan-jalan di Finlandia. Iya, FINLANDIA. Negara yang hawanya dingin
-                    tapi hati warganya anget. Gue jalan sambil ngeliatin salju jatuh pelan kayak efek bokeh di HP
-                    kentang—estetik banget sih sumpah.</p>
+/* GRID */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
 
-                <p>Nah, lagi enak-enak jalan sambil ngatur napas biar gak keliatan kaya knalpot bocor, tiba-tiba gue
-                    liat satu restoran dengan nama yang unik bet:</p>
+/* CARD */
+.blog-card {
+  background: #dcf3cc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-                <p><b>“Gagak Rimang Resto”</b></p>
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
 
-                <p>Gue langsung mikir:
-                    <i>“Lah, ini restoran Finlandia apa warung burung kicau?”</i> 😭
-                    Tapi vibes-nya cozy, lampunya hangat, dan gue udah laper. Jadi yaudah gue masuk.
-                </p>
+/* IMAGE */
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-                <p>Begitu masuk…
-                    <b>AMBEEEER.</b>
-                    Aromanya wangi banget, bro. Kayak roti baru keluar oven ditambah sup hangat yang ngena ke jiwa.
-                </p>
+/* CONTENT */
+.blog-content {
+  padding: 1.5rem;
+}
 
-                <h4>🍞 Ruisleipa</h4>
-                <p>Pertama, gue nyobain ruisleipa alias roti gandum hitam.
-                    Sumpah ini roti kerasnya bukan main, gue kira kalau dilempar ke maling bisa langsung insaf.
-                    Tapi rasanya? Gurih, earthy, legit.</p>
+.blog-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
 
-                <h4>🥟 Karjalanpiirakka</h4>
-                <p>Next, gue cobain karjalanpirakka.
-                    Bro… ini roti open-source-nya Finlandia. Tengahnya bubur nasi, pinggirnya pastry, bentuknya kayak
-                    “emoji sedih” tapi yang makan jadi happy.</p>
+.blog-content p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
 
-                <h4>🍲 Lohikeitto</h4>
-                <p>Terus gue pesen lohikeitto, sup salmon yang katanya best seller.
-                    Creamy, lembut, angetnya kayak pelukan gebetan imajinasi.</p>
+/* LINK */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3ce236;
+  text-decoration: none;
+  transition: gap 0.3s ease, opacity 0.3s ease;
+}
 
-                <h4>🌨 Vibes Resto</h4>
-                <p>Gagak Rimang Resto ini vibes-nya kek lo lagi makan di igloo modern.
-                    Staff-nya ramah, musiknya santai, dekorasinya cozy.</p>
+.read-more:hover {
+  gap: 10px;
+  opacity: 0.8;
+}
 
-                <h4>🧊 Kesimpulan ala Gen Z</h4>
-                <p>Jalan-jalan ke Finlandia udah keren…
-                    Tapi nemu Gagak Rimang Resto tuh BONUS LEVEL 99.
-                    Makanannya enak, experience-nya ngena, dan bikin pengen balik cuma buat makan lohikeitto lagi.</p>
-            </div>
+/* RESPONSIVE */
+/* TABLET */
+@media (max-width: 900px) {
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .blog {
+    padding: 3rem 0%;
+  }
+
+  .blog-header h2 {
+    font-size: 26px;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card img {
+    height: 170px;
+  }
+
+  .blog-content h3 {
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- BLOG SECTION -->
+  <section id="blog" class="blog">
+    <div class="blog-header">
+      <h2>Our <span>Blog</span></h2>
+      <p>Cerita dapur, tips kuliner, dan update Rimang Resto</p>
+    </div>
+
+    <div class="blog-container">
+      <article class="blog-card">
+        <img src="https://picsum.photos/400/300?1" alt="Blog 1">
+        <div class="blog-content">
+          <h3>Rahasia Bumbu Rimang</h3>
+          <p>Bumbu khas racikan turun-temurun yang bikin nagih.</p>
+          <span class="read-more">Read More</span>
         </div>
-    </section>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://picsum.photos/400/300?2" alt="Blog 2">
+        <div class="blog-content">
+          <h3>Menu Favorit Pelanggan</h3>
+          <p>Ini dia menu yang paling sering dipesan.</p>
+          <span class="read-more">Read More</span>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://picsum.photos/400/300?3" alt="Blog 3">
+        <div class="blog-content">
+          <h3>Cerita Dapur Kami</h3>
+          <p>Keseruan tim dapur di balik layar Rimang Resto.</p>
+          <span class="read-more">Read More</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    document.querySelectorAll(".read-more").forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Halaman blog detail coming soon 🔥");
+      });
+    });
+  </script>
 
 
     <!-- CONTACT SECTION  -->
     <section id="contact" class="contact">
         <h2>Contact <span>Us</span></h2>
-        <p>Feel free to reach out for inquiries or feedback!</p>
+        <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau masukan.</p>
         <div class="row">
             <iframe class="maps"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485323.609857528!2d23.17096723445554!3d61.63034158646036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468edf554593da5d%3A0x6adfe3bd1e0b22c0!2sTampere%2C%20Finland!5e0!3m2!1sen!2sid!4v1764724883810!5m2!1sen!2sid"
